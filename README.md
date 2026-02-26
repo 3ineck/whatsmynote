@@ -6,10 +6,10 @@
 
 ## 📚 Table of Content
 
-- [About](#about)
-- [Installation](#installation)
-- [Future Development](#installation)
-- [Version Control](#version-control)
+- [About](https://github.com/3ineck/whatsmynote?tab=readme-ov-file#-about)
+- [Installation](https://github.com/3ineck/whatsmynote?tab=readme-ov-file#%EF%B8%8F-installation)
+- [Future Development](https://github.com/3ineck/whatsmynote?tab=readme-ov-file#-future-development)
+- [Version Control](https://github.com/3ineck/whatsmynote?tab=readme-ov-file#-version-control)
 
 ---
 

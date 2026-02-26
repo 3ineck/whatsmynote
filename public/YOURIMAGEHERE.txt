@@ -1,0 +1,2 @@
+You must save you image in this folder.
+Only work with one image, for now.
