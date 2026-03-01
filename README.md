@@ -49,8 +49,8 @@ OPENAI_API_KEY=your_api_key_here
 FILE_DIRECTORY=/your/output/directory/
 ```
 
-### 4️⃣ Paste the image to the public folder
-Paste the image to the `public` folder.
+### 4️⃣ Paste the images to the public folder
+Paste ALL the images to the `public` folder.
 
 ### 4️⃣ Run the application
 ```
@@ -68,9 +68,6 @@ The project roadmap includes the following improvements:
 - **Add Automated Tests**  
   Implement unit and integration tests to ensure reliability and stability.
 
-- **Process All Images in the `public` Folder**  
-  Automatically scan and process every image inside the `public` directory instead of handling a single file. For now, only one image will work.
-
 - **Support Multiple Highlight Colors**  
   Add detection for different highlighter colors to trigger different actions (e.g., green = notes, yellow = titles, etc.).
 
@@ -78,3 +75,4 @@ The project roadmap includes the following improvements:
 | Version | Changes                                                                   | Date       |
 | ------- | ------------------------------------------------------------------------- | ---------- |
 | 0.1.0   | Initial release with image text extraction and Obisidian file generation. | 2026-02-26 |
+| 0.2.0   | Added to run in a loop for all images inside the /public folder.          | 2026-03-01 |
