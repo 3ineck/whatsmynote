@@ -1,8 +1,9 @@
 import { getNumberOfFiles, readImageAsBase64, writeMDFile } from "../models/fileModel.js";
 import { callsApi } from "../models/apiModel.js";
+import { callsLocalAi } from "../models/localAiModel.js";
 import { createMDContent, generateFileName } from "../views/markdownView.js";
 
-export async function handler() {
+export async function handler(typeOfAi) {
   //Get the number of files  
   const files = await getNumberOfFiles();
   
@@ -16,7 +17,20 @@ export async function handler() {
     const base64 = readImageAsBase64(imagePath);
 
     //Calls the API and returns the extracted text
-    const extractedText = await callsApi(base64);
+    let extractedText;
+
+      //LOCAL AI
+      if (typeOfAi === 1) {
+        extractedText = await callsLocalAi(base64);
+
+      //CHAT GPT API AI
+      } else if (typeOfAi === 2) {
+        extractedText = await callsApi(base64);
+      
+      //ERROR FOR WRONG TYPE
+      } else {
+        throw new Error("Invalid typeOfAi declaration. Check README.md");
+      }
 
     //Customize the filename
     const fileName = generateFileName(i + 1);
@@ -29,5 +43,5 @@ export async function handler() {
 
     //Logs that the file is created
     console.log(`Created: ${fileName}`);
-  }
+  } 
 }

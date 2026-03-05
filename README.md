@@ -21,6 +21,10 @@ As you can imagine, typing out all these notes takes time. So I started thinking
 
 If you struggle with this same issue, this program might be very useful for you.
 
+### UPDATE: LOCAL AIs
+
+With the release of the smalls Qwen 3.5 models, which are very good and small, making it ideal for learning how to work with local AI, I decided to adapt my tool to support local AI models. Even though they may not be quite as powerful as ChatGPT, for this purpose, their quality is similar. Models like Qwen 3.5 4B are lightweight enough to run locally, making it a free service with privacy, if that matters to you. To run a local LLM with WhatsMyNote, I use LM Studio and followed the [official documentation](https://lmstudio.ai/docs/developer/rest) to set up a local API.
+
 ---
 
 ## ⚙️ Installation
@@ -44,26 +48,44 @@ Create a `.env` file in the root directory:
 
 `FILE_DIRECTORY`: This is the Obsidian file directory where the .md file will be created.
 
+If you are using local LLMs with LM Studio, set the environment variables:
+
+`LOCAL_API_FETCH`= Your API adress, like: "http://IP:PORT/api/v1/chat"
+
+`LOCAL_API_MODEL`= The model you are using, like: "qwen3.5-4b"
+
 ```
 OPENAI_API_KEY=your_api_key_here
-FILE_DIRECTORY=/your/output/directory/
+FILE_DIRECTORY="/your/output/directory/"
+LOCAL_API_FETCH="http://IP:PORT/api/v1/chat"
+LOCAL_API_MODEL="llm_model"
 ```
 
 ### 4️⃣ Paste the images to the public folder
 Paste ALL the images to the `public` folder.
+You must save the images as a .JPG file.
 
-### 4️⃣ Run the application
+### 5️⃣ Set the type of LLM you are using
+`cd` to the `/src` folder and open the `index.js` file
+Inside this folder you will see the variable:
+
+```
+const typeOfAi = NUMBER;
+```
+
+If you are using local AI, change the value of the variable typeOfAi to 1.
+If you are using the ChatGPT API, change the value of the variable typeOfAi to 2.
+
+### 6️⃣ Run the application
+`cd` to the `/src` folder and
+
 ```
 node index.js
 ```
 
 ## 🚀 Future Development
 
-
 The project roadmap includes the following improvements:
-
-- **Code Refactoring**  
-  Improve code structure, modularization, and maintainability.
 
 - **Add Automated Tests**  
   Implement unit and integration tests to ensure reliability and stability.
@@ -76,3 +98,5 @@ The project roadmap includes the following improvements:
 | ------- | ------------------------------------------------------------------------- | ---------- |
 | 0.1.0   | Initial release with image text extraction and Obisidian file generation. | 2026-02-26 |
 | 0.2.0   | Added to run in a loop for all images inside the /public folder.          | 2026-03-01 |
+| 0.3.0   | Refactoring                                                               | 2026-03-02 |
+| 0.4.0   | Added Local LLMs support                                                  | 2026-03-05 |
