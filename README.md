@@ -50,7 +50,7 @@ Create a `.env` file in the root directory:
 
 If you are using local LLMs with LM Studio, set the environment variables:
 
-`LOCAL_API_FETCH`= Your API adress, like: "http://IP:PORT/api/v1/chat"
+`LOCAL_API_FETCH`= Your API adress, like: "http:// IP : PORT /api/v1/chat"
 
 `LOCAL_API_MODEL`= The model you are using, like: "qwen3.5-4b"
 
@@ -63,10 +63,12 @@ LOCAL_API_MODEL="llm_model"
 
 ### 4️⃣ Paste the images to the public folder
 Paste ALL the images to the `public` folder.
-You must save the images as a .JPG file.
+
+You must save the images as a **.JPG file**.
 
 ### 5️⃣ Set the type of LLM you are using
-`cd` to the `/src` folder and open the `index.js` file
+`cd` to the `/src` folder and open the `index.js` file.
+
 Inside this folder you will see the variable:
 
 ```
@@ -74,6 +76,7 @@ const typeOfAi = NUMBER;
 ```
 
 If you are using local AI, change the value of the variable typeOfAi to 1.
+
 If you are using the ChatGPT API, change the value of the variable typeOfAi to 2.
 
 ### 6️⃣ Run the application
